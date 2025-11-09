@@ -1,0 +1,170 @@
+/* 모든 페이지에서 적용되는 스타일*/
+:root {
+
+    /*color root*/
+    --main1-c: #EAE7DC;
+    --main2-c: #F2F0E9;
+    --txt-c: #111111;
+    --white: #fff;
+    --white80: rgba( 255, 255, 255, 0.8);
+    --white50: rgba( 255, 255, 255, 0.5);
+    --white30: rgba( 255, 255, 255, 0.3);
+    --white15: rgba( 255, 255, 255, 0.15);
+    --white10: rgba( 255, 255, 255, 0.1);
+    --black: #000;
+    --black80:rgba(0 , 0 , 0, 0.8);
+    --black70:rgba(0 , 0 , 0, 0.7);
+    --black50:rgba(0 , 0 , 0, 0.5);
+    --black40:rgba(0 , 0 , 0, 0.4);
+    --black30:rgba(0 , 0 , 0, 0.3);
+    --black15:rgba(0 , 0 , 0, 0.15);
+    --black10:rgba(0 , 0 , 0, 0.1);
+    
+
+    /*font*/
+    --basesize: 17px;
+    --titsize: clamp(28px, 4vw ,40px);
+    --titsize-sub: clamp(17px, 1.6vw, 20px);
+    --btnsize: clamp(13px, 1vw, 15px);
+    --regular: 400;
+    --light-w: 300;
+    --titline: 1.3;
+
+    /*display*/
+    --header-h: 80px;
+    --header-var : clamp(56px, 7vw, 80px);
+
+    /*margin*/
+    --ctn-mar: 30px;
+    --wrapper-mar: 210px;
+}
+@media screen and (max-width:1024px){
+    :root {
+        /*font-size*/
+        --basesize: 16px;
+        --btnsize: 13px;
+        /*display*/
+        --header-h: 70px;
+        /*margin*/
+        --ctn-mar: 16px;
+        --wrapper-mar: 16px;
+    }
+}
+@media screen and (max-width:768px){
+    :root {
+        /*font-size*/
+        --basesize: 16px;
+        --btnsize: 13px;
+        /*display*/
+        --header-h: 56px;
+        /*margin*/
+        --ctn-mar: 16px;
+        --wrapper-mar: 16px;
+    }
+}
+
+html {
+    font-size: 10px;
+    background-color: var(--main1-c);
+}
+body {    
+    font-family:  "Poppins", "Pretendard", sans-serif; 
+    /*영문폰트와 한글폰트를 쓸 때, 
+    1. 영문폰트는 한글 지원 안돼야
+    2. font=family에서 영문폰트 먼저 선언한 뒤 한글 폰트 선언
+       => 그래야 영문,숫자 등은 영문폰트로 적용되고, 한글은 적용이 안되니까 한글폰트가 후순위로 적용된다*/
+    font-size: 1.7rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--txt-c);
+    word-break: keep-all;
+    word-wrap: break-word;
+    letter-spacing: -0.04rem;
+}
+.ctn_wrapper {
+    width: auto;
+    margin: 0 var(--ctn-mar);
+}
+.wrapper {
+    width: 1440px;
+    margin: 0 auto;
+}
+
+#wrap {
+    position: relative;
+    /* overflow: hidden ; */
+}
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0); /*도형을 그리는 명령*/
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}    /*html구조상 문자를 써주긴 했는데 글자를 안보이게 하고 싶을 때 blind 클래스로 사라지게 함*/
+
+
+/*----------------------
+ 좌우여백 (최종 4% - 3% - 16px)
+ -----------------------
+    ex) 좌우여백 50px : 1260+ (50*2) = 1360
+        좌우여백 30px : 1260 + (30*2) = 1320 ..
+
+        좌우여백 4% : 1260 + 8% = 1360.8
+*/
+@media screen and (max-width:1360.8px){
+    :root {
+        --ctn-mar: 4%;
+        --wrapper-mar: 4%;
+    }
+    .wrapper {
+        width: auto;
+        margin: 0 var(--wrapper-mar);
+        
+    }
+   
+}
+
+.mo_only {
+   display: none;  /*모바일에서만 보임*/
+}
+
+@media screen and (max-width:1024px){
+    :root {
+        --ctn-mar: 3%;
+    }
+    .wrapper {
+        width: auto;  /*니가 알아서 ...*/
+        margin: 0 var(--ctn-mar);
+    }
+    .pc_only {
+        display: none;
+    }
+    .mo_only {
+        display: block;  /*모바일에서만 보임*/
+    }
+}
+@media screen and (max-width:768px){
+    :root {
+        --ctn-mar: 16px;
+    }
+    .wrapper {
+        width: auto;  /*니가 알아서 ...*/
+        margin: 0 var(--ctn-mar);
+    }
+    
+    #wrap {
+        min-width: 0 ;  /*최소 넓이 없음!*/
+    }
+    body {
+        font-size: 1.6rem;
+    }
+   
+
+}/*media*/
+
+
+::selection {
+    background-color: var(--txt-c);
+    color: var(--main2-c);
+}

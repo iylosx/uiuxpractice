@@ -1,0 +1,47 @@
+@import url(common.css);
+@import url(default.css);
+@import url(font.css);
+@import url(layout.css);
+
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 0 0 0 var(--ctn-mar);
+    height: var(--header-h);
+    width: 100%;
+    line-height: var(--header-h);
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    background-blend-mode: difference;
+    z-index: 999;
+}
+header .gnb ul{
+    display: flex;
+    justify-content: space-between;
+}
+header .gnb ul li a{
+    position: relative;
+    padding: 0 31.5px;
+}
+header .gnb ul li a::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 80%;
+    height: 105%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    background-color: var(--txt-c);
+    opacity: 0;
+    transition: .5s;
+    z-index: -1;
+}
+header .gnb ul li a:hover{
+    color: var(--main2-c);
+}
+header .gnb ul li a:hover::before {
+    opacity: 1;
+}
