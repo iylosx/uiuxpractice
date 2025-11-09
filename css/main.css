@@ -4,8 +4,9 @@
 @import url(layout.css);
 
 
-body, html {
+body{
     font-weight: 300;
+    min-width: 1300px;
 }
 .main {
     height: 100dvh;
@@ -16,7 +17,7 @@ body, html {
 
 .main .slogan{
     position: relative;
-    margin: 40px 0 0 0;
+    margin: 140px 0 0 0;
 }
 .main .slogan h2 {
     font-size: 13rem;
@@ -39,7 +40,7 @@ body, html {
 .main .slogan .text {
     display: block;
     position: absolute;
-    right: 210px;
+    right: var(--ctn-mar);
     top: 114px;
     width: 30%;
     text-align: right;
@@ -97,7 +98,8 @@ body, html {
 
 .about {
     background-color: var(--txt-c);
-    border-radius: 20px;
+    min-width: 1500px;
+    border-radius: 40px;
     padding: 95px 0 142px 0;
     color: var(--main2-c);
     margin: 0 var(--ctn-mar);
@@ -111,6 +113,8 @@ body, html {
     display: flex;
     margin-top: 90px;
     flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 60px 40px;
 }
 .about .list .tit {
     display: flex;
@@ -121,7 +125,7 @@ body, html {
 .about .list .profile,
 .about .list .career,
 .about .list .skills {
-    width: 33.33%;
+    width: calc(33.33% - 40px);
 }
 .about .list .tit h3 {
     font-size: 25px;
@@ -130,22 +134,31 @@ body, html {
     margin: 0 0 34px 0;
     font-size: 22px;
 }
+.about .list dl {
+    display: flex;
+    gap: 9px 10px;
+}
 .about .list dl dt{
     float: left;
-}
-.about .list dl dd {
-    margin: 0 0 9px 73px;
     opacity: 0.5;
+
 }
-.about .list .career dl {
+/* .about .list dl dd {
+    margin: 0 0 9px 73px;
+} */
+/* .about .list .career dl {
     display: flex;
-    gap: 0 10px;
+    gap: 9px 1px;
     flex-direction: column;
 }
+.about .list .career dl dt {
+    opacity: 1;
+}
+
 .about .list .career dl dd {
     margin: 0 0 9px 0;
     opacity: 0.5;
-}
+} */
 
 .about .list .skills > ul {
     display: flex;
@@ -157,4 +170,24 @@ body, html {
     padding: 6px 22px;
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.1);
+}
+.about .list .license dl dd {
+    margin: 0 0 9px 93px;
+}
+
+@media screen and (max-width:1600px){ 
+
+.main .slogan h2 {
+    font-size: 12rem;
+}
+.main .slogan h2::before {
+    left: 500px;
+}
+
+.main .photo { 
+    right: calc(40px + var(--ctn-mar));
+    width: 10.75%;
+    height: 21.53%;
+}
+
 }

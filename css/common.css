@@ -104,23 +104,14 @@ body {
 }    /*html구조상 문자를 써주긴 했는데 글자를 안보이게 하고 싶을 때 blind 클래스로 사라지게 함*/
 
 
-/*----------------------
- 좌우여백 (최종 4% - 3% - 16px)
- -----------------------
-    ex) 좌우여백 50px : 1260+ (50*2) = 1360
-        좌우여백 30px : 1260 + (30*2) = 1320 ..
-
-        좌우여백 4% : 1260 + 8% = 1360.8
-*/
-@media screen and (max-width:1360.8px){
+@media screen and (max-width:1660.8px){
     :root {
         --ctn-mar: 4%;
         --wrapper-mar: 4%;
     }
     .wrapper {
         width: auto;
-        margin: 0 var(--wrapper-mar);
-        
+        margin: 0 3%;
     }
    
 }
@@ -129,39 +120,6 @@ body {
    display: none;  /*모바일에서만 보임*/
 }
 
-@media screen and (max-width:1024px){
-    :root {
-        --ctn-mar: 3%;
-    }
-    .wrapper {
-        width: auto;  /*니가 알아서 ...*/
-        margin: 0 var(--ctn-mar);
-    }
-    .pc_only {
-        display: none;
-    }
-    .mo_only {
-        display: block;  /*모바일에서만 보임*/
-    }
-}
-@media screen and (max-width:768px){
-    :root {
-        --ctn-mar: 16px;
-    }
-    .wrapper {
-        width: auto;  /*니가 알아서 ...*/
-        margin: 0 var(--ctn-mar);
-    }
-    
-    #wrap {
-        min-width: 0 ;  /*최소 넓이 없음!*/
-    }
-    body {
-        font-size: 1.6rem;
-    }
-   
-
-}/*media*/
 
 
 ::selection {
