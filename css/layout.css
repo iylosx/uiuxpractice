@@ -17,6 +17,7 @@ header {
     z-index: 100;
     mix-blend-mode: difference;
     color: var(--main1-c);
+    /* backdrop-filter: blur(7px); */
 }
 header .gnb ul{
     display: flex;
@@ -35,13 +36,13 @@ header .gnb ul li a::before {
     height: 105%;
     transform: translate(-50%, -50%);
     border-radius: 20px;
-    background-color: var(--txt-c);
+    background-color: var(--main2-c);
     opacity: 0;
     transition: .5s;
     z-index: -1;
 }
 header .gnb ul li a.active{
-    color: var(--main2-c);
+    color: var(--txt-c);
     
 }
 header .gnb ul li a.active::before {
