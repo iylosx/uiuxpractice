@@ -6,18 +6,16 @@
 
 body{
     font-weight: 300;
-    min-width: 1300px;
+    min-width: 1400px;
 }
 .main {
-    height: 100dvh;
-}
-.main .ctn_wrapper {
-    position: relative;
+    /* height: 100dvh; */
+    margin-bottom: 350px;
 }
 
 .main .slogan{
     position: relative;
-    margin: 140px 0 0 0;
+    padding: 140px 0 0 0;
 }
 .main .slogan h2 {
     font-size: 13rem;
@@ -41,7 +39,7 @@ body{
     display: block;
     position: absolute;
     right: var(--ctn-mar);
-    top: 114px;
+    top: 264px;
     width: 30%;
     text-align: right;
 }
@@ -70,12 +68,13 @@ body{
 .main .scroll span {
     white-space: nowrap;
     display: block;
-    animation: scroll_roll 4.3s  infinite linear;
+    transform: translate(-0%);
+    animation: scroll_roll 6s  infinite linear;
 }
 
 @keyframes scroll_roll {
-    0% {transform:  translateX(-31%);}
-    100% {transform:  translateX(-92%);}
+    0% {transform:  translateX(-0%);}
+    100% {transform:  translateX(-123.5%);}
 }
 .main .photo { 
     position: absolute;
@@ -103,11 +102,28 @@ body{
     padding: 95px 0 142px 0;
     color: var(--main2-c);
     margin: 0 var(--ctn-mar);
+    z-index: -2;
 }
 .about .greetings h2 {
     font-size: 32px;
     line-height: 1.3;
 }
+.about .greetings h2 span {
+    position: relative;
+    color: var(--txt-c);
+    z-index: 1;
+}
+.about .greetings h2 span::before {
+    position: absolute;
+    content: "";
+    width: 110%;
+    height: 90%;
+    background-color: var(--main2-c);
+    left: -4px;
+    top: 3px;
+    z-index: -1;
+}
+
 
 .about .list {
     display: flex;
@@ -122,43 +138,53 @@ body{
     align-items: flex-end;
     gap: 10px;
 }
+.about .list .tit p {
+    opacity: 0.5;
+}
 .about .list .profile,
 .about .list .career,
-.about .list .skills {
+.about .list .skills,
+.about .list .license {
     width: calc(33.33% - 40px);
 }
 .about .list .tit h3 {
     font-size: 25px;
 }
-.about .list .name {
+.about .list .profile ul{
     margin: 0 0 34px 0;
     font-size: 22px;
-}
-.about .list dl {
     display: flex;
-    gap: 9px 10px;
+    gap: 17px;
 }
-.about .list dl dt{
+.about .list .profile .info dl {
+    display: flex;
+    flex-direction: row;
+}
+.about .list .profile .info dt{
     float: left;
     opacity: 0.5;
 
 }
-/* .about .list dl dd {
+.about .list .profile .info dd {
     margin: 0 0 9px 73px;
-} */
-/* .about .list .career dl {
-    display: flex;
-    gap: 9px 1px;
-    flex-direction: column;
-}
-.about .list .career dl dt {
-    opacity: 1;
 }
 
-.about .list .career dl dd {
-    margin: 0 0 9px 0;
+.about .list .career ul {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.about .list .career ul .career_wrap {
+    display: flex;
+    gap: 0 10px;
+}
+
+.about .list .career ul .career_wrap .date,
+.about .list .career ul .work {
     opacity: 0.5;
-} */
+}
+
 
 .about .list .skills > ul {
     display: flex;
@@ -171,8 +197,224 @@ body{
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.1);
 }
+
+
+.about .list .license dl dt {
+    float: left;
+    opacity: 0.5;
+}
+
 .about .list .license dl dd {
-    margin: 0 0 9px 93px;
+    margin: 0 0 9px 89px;
+}
+
+
+.about .list .education {
+    width: 65.2%;;
+}
+.about .list .education dl dt {
+    float: left;
+    opacity: 0.5;
+}
+.about .list .education dl dd {
+    margin: 0 0 9px 160px;
+    position: relative;
+    display: flex;
+    gap: 0 23px;
+}
+.about .list .education dl dd .front {
+    position: relative;
+}
+.about .list .education dl dd .front::before {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 11px;
+    background-color: var(--white50);
+    right: -11px;
+    top: 7px;
+}
+
+.works {
+    margin: 150px 0 0 0;
+}
+.works .tit {
+    border-bottom: 2px solid var(--txt-c);
+    padding-bottom: 28px;
+}
+.works .tit .wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.works .tit h2 {
+    font-size: 50px;
+    font-weight: 400;
+    position: relative;
+    display: inline-block;
+}
+.works .tit h2::before {
+    content: "";
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    right: -83px;
+    top: 19px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 36 36' fill='%23111111' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 36V22.8L6.7 32.15L3.85 29.3L13.2 20H0V16H13.2L3.85 6.7L6.7 3.85L16 13.2V0H20V13.2L29.3 3.85L32.15 6.7L22.8 16H36V20H22.8L32.15 29.3L29.3 32.15L20 22.8V36H16Z' /%3E%3C/svg%3E%0A");
+} 
+.works .tit .list_cap {
+    display: flex;
+    width: 283px;
+    justify-content: space-between;
+}
+.works .list a {
+    display: block;
+    padding: 37px 0 34px 0;
+    border-bottom: 1px solid var(--txt-c);
+}
+
+.works .list a:hover {
+    background-color: var(--txt-c);
+    color: var(--main2-c);
+    transition: .3s;
+}
+.works .list a .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.works .list a .list_sub {
+    position: relative;
+}
+.works .list a .list_sub::before {
+    content: "view";
+    position: absolute;
+    right: -84px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    font-size: 15px;
+}
+.works .list a .list_sub::after {
+    content: "";
+    position: absolute;
+    right: -34px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--main2-c);
+    opacity: 0 ;
+    transition: .3s;
+}
+.works .list a:hover .list_sub::after,
+.works .list a:hover .list_sub::before {
+    opacity: .5;
+    transition: .3s;
+} 
+.works .list a .right_area {
+    display: flex;
+    width: 283px;
+    justify-content: space-between;
+}
+.works .list a .right_area span {
+    text-align: right;
+}
+
+footer {
+    margin: 34px 0 0 0;
+    color: var(--main2-c);
+    background-color: var(--txt-c);
+    padding: 164px 0 123px 0;
+    position: relative;
+}
+footer::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 71px;
+    background-color: var(--main1-c);
+    border-radius: 0 0 30px 30px;
+}
+footer .thank h2 {
+    font-size: 13rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+footer .thank p {
+    font-size: 3.2rem;
+}
+footer .f_info {
+    margin: 116px 0 0 0;
+    display: flex;
+    gap: 0 165px;
+}
+footer .f_info .contact,
+footer .f_info .more {
+    display: flex;
+    flex-direction: column;
+}
+footer .f_info .contact h3,
+footer .f_info .more h3{
+    font-size: 22px;
+    margin-bottom: 11px;
+}
+footer .f_info .contact span,
+footer .f_info .more span {
+    opacity: .7;
+}
+footer .f_info .more a span {
+    position: relative;
+}
+footer .f_info .more a span::before {
+    position: absolute;
+    content: "";
+    width: 8px;
+    height: 8px;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 9 9' fill='%23F2F0E9' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.516375 8.84138L0 8.325L7.56056 0.75H0.591375V0H8.84137V8.25H8.09137V1.28081L0.516375 8.84138Z' /%3E%3C/svg%3E%0A");
+
+}
+
+footer .f_right {
+    position: absolute;
+    right: var(--wrapper-mar);
+    bottom: 123px;
+}
+footer .f_right::before {
+    content: "";
+    width: 156px;
+    height: 156px;
+    position: absolute;
+    right: 0;
+    top: -231px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 36 36' fill='%23EAE7DC' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 36V22.8L6.7 32.15L3.85 29.3L13.2 20H0V16H13.2L3.85 6.7L6.7 3.85L16 13.2V0H20V13.2L29.3 3.85L32.15 6.7L22.8 16H36V20H22.8L32.15 29.3L29.3 32.15L20 22.8V36H16Z' /%3E%3C/svg%3E%0A");
+} 
+footer .f_right span {
+    display: block;
+    width: 394px;
+    opacity: 0.2;
+    text-align: right;
+}
+@media screen and (max-width:1669px){
+    .wrapper {
+        width: 1300px;
+        margin: 0 auto;
+    }
 }
 
 @media screen and (max-width:1600px){ 

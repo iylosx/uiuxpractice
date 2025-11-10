@@ -3,24 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
-    <title>김솔이의 포트폴리오</title>
+    <title>김솔이 | PORTFOLIO</title>
 </head>
 <body>
     <header>
-        <h1 class="home"><a href="index.html">PORTFOLIO</a></h1>
+        <h1 class="home"><a href="index.html"><span>PORTFOLIO</span></a></h1>
         <nav class="gnb">
             <ul>
-                <li><a href="#n">MAIN</a></li>
-                <li><a href="#n">ABOUT</a></li>
-                <li><a href="#n">WORKS</a></li>
-                <li><a href="#n">CONTACT</a></li>
+                <li><a href="#n" data-link="main"><span>MAIN</span></a></li>
+                <li><a href="#n" data-link="about"><span>ABOUT</span></a></li>
+                <li><a href="#n" data-link="works"><span>WORKS</span></a></li>
+                <li><a href="#n" data-link="footer"><span>CONTACT</span></a></li>
             </ul>
         </nav>
     </header>
+
     <div class="container">
-        <section class="main">
+        <!-- MAIN -->
+        <section class="main" data-menu="main">
             <div class="ctn_wrapper">
                 <div class="slogan">
                     <h2>
@@ -29,53 +33,234 @@
                         not just for screens
                     </h2>
                     <div class="text">
-                            <strong>KIM SOLYI</strong>
-                            <p>
-                                Good design starts from observation. I create visuals that communicate clearly and experiences that stay with people. Design, to me, is a way of building understanding.
-                            </p>
-                        </div>
+                        <strong>KIM SOLYI</strong>
+                        <p>
+                            Good design starts from observation. I create visuals that communicate clearly and experiences that stay with people. Design, to me, is a way of building understanding.
+                        </p>
                     </div>
-                </div><!--slogan-->
+                </div><!-- slogan -->
+
                 <div class="scroll">
-                    <span>*  SCROLL DOWN  *  SCROLL DOWN  *  SCROLL DOWN  *  SCROLL DOWN  *  SCROLL DOWN  *  SCROLL DOWN  *  SCROLL DOWN  *  SCROLL DOWN</span>
+                    <span>SCROLL DOWN &nbsp;&nbsp;&nbsp;&nbsp; SCROLL DOWN &nbsp;&nbsp;&nbsp;&nbsp; SCROLL DOWN &nbsp;&nbsp;&nbsp;&nbsp; SCROLL DOWN &nbsp;&nbsp;&nbsp;&nbsp; SCROLL DOWN &nbsp;&nbsp;&nbsp;&nbsp; SCROLL DOWN &nbsp;&nbsp;&nbsp;&nbsp; SCROLL DOWN &nbsp;&nbsp;&nbsp;&nbsp; SCROLL DOWN</span>
+                    <!-- <span class="test">SCROLL DOWN &nbsp;&nbsp;&nbsp;&nbsp; SCROLL DOWN &nbsp;&nbsp;&nbsp;&nbsp; SCROLL DOWN &nbsp;&nbsp;&nbsp;&nbsp; SCROLL DOWN &nbsp;&nbsp;&nbsp;&nbsp; SCROLL DOWN &nbsp;&nbsp;&nbsp;&nbsp; SCROLL DOWN &nbsp;&nbsp;&nbsp;&nbsp; SCROLL DOWN &nbsp;&nbsp;&nbsp;&nbsp; SCROLL DOWN</span> -->
                 </div>
-                <div class="photo"><img src="images/main/asterisk.png"></div>
-            </div><!--ctn_wrapper-->
+                <div class="photo"><img src="images/main/asterisk.png" alt="asterisk"></div>
+            </div><!-- ctn_wrapper -->
         </section>
-        <section class="about">
-                <div class="wrapper">
-                    <div class="greetings">
-                        <h2>안녕하세요 <br> 
-                            사람 사이 더 나은 연결을 만드는 디자이너, <span>김솔이</span> 입니다. </h2>
-                    </div>
-                    <div class="list">
-                        <div class="profile"></div>
-                        <div class="career"></div>
-                        <div class="skills">
-                            <div class="tit">
-                                <h3>보유역량</h3>
-                                <p>Skills</p>
-                            </div>
-                            <ul>
-                                <li><span>Photoshop</span></li>
-                                <li><span>Illustrator</span></li>
-                                <li><span>Figma</span></li>
-                                <li><span>InDesign</span></li>
-                                <li><span>XD</span></li>
-                                <li><span>Midjourney</span></li>
-                                <li><span>HTML</span></li>
-                                <li><span>CSS</span></li>
-                                <li><span>J-Query</span></li>
-                            </ul>
+
+        <!-- ABOUT -->
+        <section class="about" data-menu="about">
+            <div class="wrapper">
+                <div class="greetings">
+                    <h2>
+                        안녕하세요 <br>
+                        사람 사이 더 나은 연결을 만드는 디자이너, <span>김솔이</span> 입니다.
+                    </h2>
+                </div>
+
+                <div class="list">
+                    <!-- PROFILE -->
+                    <div class="profile">
+                        <div class="tit">
+                            <h3>인적사항</h3>
+                            <p>Profile</p>
                         </div>
-                        
-                        <div class="education"></div>
+                        <ul class="name">
+                            <li>김솔이</li>
+                            <li>2000. 12. 24.</li>
+                        </ul>
+                        <dl class="info">
+                            <dt>PHONE</dt><dd>010 - 5621 - 1458</dd>
+                            <dt>E-MAIL</dt><dd>plzsirrla@gmail.com</dd>
+                            <dt>SNS</dt><dd>Instagram @124.081.6</dd>
+                        </dl>
                     </div>
-                        
+
+                    <!-- CAREER -->
+                    <div class="career">
+                        <div class="tit">
+                            <h3>경력사항</h3>
+                            <p>Career</p>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="career_wrap">
+                                    <span class="date">2022.09 - 2023.09 (12mo.)</span>
+                                    <span class="company">바디듀 근로장학생 근무</span>
+                                </div>
+                                <p class="work">사내 업무 보조</p>
+                            </li>
+                            <li>
+                                <div class="career_wrap">
+                                    <span class="date">2024.03 - 2024.10 (7mo.)</span>
+                                    <span class="company">바디듀 인턴 근무</span>
+                                </div>
+                                <p class="work">SNS 마케팅 / 그래픽 디자인</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- SKILLS -->
+                    <div class="skills">
+                        <div class="tit">
+                            <h3>보유역량</h3>
+                            <p>Skills</p>
+                        </div>
+                        <ul>
+                            <li><span>Photoshop</span></li>
+                            <li><span>Illustrator</span></li>
+                            <li><span>Figma</span></li>
+                            <li><span>InDesign</span></li>
+                            <li><span>XD</span></li>
+                            <li><span>Midjourney</span></li>
+                            <li><span>HTML</span></li>
+                            <li><span>CSS</span></li>
+                            <li><span>jQuery</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="license">
+                        <div class="tit">
+                            <h3>자격증</h3>
+                            <p>License / Credential</p>
+                        </div>
+                        <dl>
+                            <dt class="date">2025. 03.</dt>
+                            <dd> GTQ 그래픽 기술 자격 1급</dd>
+                            <dt class="date">2025. 03.</dt>
+                            <dd>ACP Indesign 2022 CC</dd>
+                            <dt class="date">2025. 01.</dt>
+                            <dd>ACP Illustrator / Photoshop 2022</dd>
+                            <dt class="date">2023. 10.</dt>
+                            <dd>ZD 독일어 B1</dd>
+                            <dt class="date">2022. 06.</dt>
+                            <dd>운전면허증 보통 2종</dd>
+                        </dl>
+                    </div>
+                    <div class="education">
+                        <div class="tit">
+                            <h3>교육</h3>
+                            <p>Education</p>
+                        </div>
+                        <dl>
+                            <dt class="date">2016.03 - 2019.02</dt>
+                            <dd>
+                                <span class="front">충북외국어고등학교</span>
+                                <span>독일어과</span>
+                            </dd>
+                            <dt class="date">2019.03 - 2024.02</dt>
+                            <dd>
+                                <span class="front">충북대학교</span>
+                                <span>독일언어문화학과 / 문화콘텐츠</span>
+                            </dd>
+                            <dt class="date">2024.10. - 2025.02</dt>
+                            <dd>
+                                <span class="front">SBS아카데미컴퓨터아트학원</span>
+                                <span>시각/편집디자인</span>
+                            </dd>
+                            <dt class="date">2025.07 - 2025.12</dt>
+                            <dd>
+                                <span class="front">이지디자인컴퓨터학원</span>
+                                <span>UI/UX 반응형웹디자인&웹퍼블리셔</span>
+                            </dd>
+                        </dl>
+                    </div>
+                </div><!-- list -->
+            </div><!-- wrapper -->
+        </section>
+        <section class="works" data-menu="works">
+            <div class="tit">
+                <div class="wrapper">
+                    <h2>Works</h2>
+                    <div class="list_cap">
+                        <span class="type">Work Type</span>
+                        <span class="client">Client</span>
+                    </div>
+                </div><!--wrapper-->
+            </div><!--tit-->
+            <div class="list">
+            <a href="#n"> 
+                    <div class="wrapper">
+                        <div class="list_sub">
+                            <span>거제문화관광 사이트 개편</span>
+                        </div>
+                        <div class="right_area">
+                            <div class="list_type"><span>UIUX</span></div>
+                            <div class="list_client"><span>Personal</span></div>
+                        </div>
+                    </div>
+            </a>
+                <a href="#n"> 
+                    <div class="wrapper">
+                        <div class="list_sub">
+                            <span>국립현대미술관 사이트 개편</span>
+                        </div>
+                        <div class="right_area">
+                            <div class="list_type"><span>UIUX</span></div>
+                            <div class="list_client"><span>Personal</span></div>
+                        </div>
+                    </div>
+            </a>
+            <a href="#n"> 
+                    <div class="wrapper">
+                        <div class="list_sub">
+                            <span>포인핸드 사이트 개편</span>
+                        </div>
+                        <div class="right_area">
+                            <div class="list_type"><span>UIUX</span></div>
+                            <div class="list_client"><span>Personal</span></div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#n"> 
+                    <div class="wrapper">
+                        <div class="list_sub">
+                            <span>‘The Sawtooth’ 로고 제작</span>
+                        </div>
+                        <div class="right_area">
+                            <div class="list_type"><span>Branding</span></div>
+                            <div class="list_client"><span>The Sawtooth</span></div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#n"> 
+                    <div class="wrapper">
+                        <div class="list_sub">
+                            <span>‘KNTTING POINTED’ 브랜딩</span>
+                        </div>
+                        <div class="right_area">
+                            <div class="list_type"><span>Branding</span></div>
+                            <div class="list_client"><span>Personal</span></div>
+                        </div>
+                    </div>
+                </a>
+            
+            </div><!--list-->
+        </section><!--works-->
+    </div><!-- container -->
+
+    <footer data-menu="footer">
+        <div class="wrapper">
+            <div class="thank">
+                <h2>THANK YOU</h2>
+                <p>더 많은 이야기를 들려드릴 수 있길 바랍니다</p>
+            </div>
+            <div class="f_info">
+                <div class="contact">
+                    <h3>CONTACT</h3>
+                    <span>plzsirrla@gmail.com</span>
+                    <span>82+ 010 - 5621 - 1458</span>
+                </div>
+                <div class="more">
+                    <h3>MORE WORK</h3>
+                    <a href="https://www.behance.net/57ae5aa9" target="_blank"><span>BEHANCE</span></a>
+                    <a href="https://www.instagram.com/124.081.6/" target="_blank"><span>INSTAGRAM</span></a>
                 </div>
             </div>
-        </section>
-    </div>
-    <footer></footer>
+            <div class="f_right">
+                <span>Design connects us —<br> through stories, feelings, and time. <br> May these stories inspire your own.</span>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

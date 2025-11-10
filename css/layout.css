@@ -14,8 +14,9 @@ header {
     display: flex;
     justify-content: space-between;
     font-size: 20px;
-    background-blend-mode: difference;
-    z-index: 999;
+    z-index: 100;
+    mix-blend-mode: difference;
+    color: var(--main1-c);
 }
 header .gnb ul{
     display: flex;
@@ -39,9 +40,10 @@ header .gnb ul li a::before {
     transition: .5s;
     z-index: -1;
 }
-header .gnb ul li a:hover{
+header .gnb ul li a.active{
     color: var(--main2-c);
+    
 }
-header .gnb ul li a:hover::before {
+header .gnb ul li a.active::before {
     opacity: 1;
 }
